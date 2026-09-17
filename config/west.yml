@@ -4,11 +4,19 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: zzeneg
+      url-base: https://github.com/zzeneg
+    - name: jameshaston
+      url-base: https://github.com/jameshaston
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    - name: zmk-raw-hid
+      remote: zzeneg
+      revision: main
+    - name: zmk-kb-broadcaster
+      remote: jameshaston
+      revision: main
   self:
     path: config
